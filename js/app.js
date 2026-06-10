@@ -70,57 +70,153 @@
   });
 })();
 
-// CTA lead form modal
+// CTA lead form modal + Google Sheets submission
 (function(){
   'use strict';
-  const $=(s,r=document)=>r.querySelector(s);
-  const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
-  const configs={
-    invitation:{title:'Request Invitation',intro:'Submit your details for invitation consideration to Meridian Exchange, an invitation-only strategic roundtable summit.',intent:'Request Invitation',sponsor:false,submit:'Submit Invitation Request'},
-    partner:{title:'Partner With Us',intro:'Share your organisation details and partnership interest. Our team will contact you to discuss strategic alignment.',intent:'Partner With Us',sponsor:true,submit:'Submit Partnership Enquiry'},
-    sponsorship:{title:'Discuss Sponsorship',intro:'Tell us about your sponsorship objectives and our team will share suitable partnership options.',intent:'Contact Us to Discuss Sponsorship',sponsor:true,submit:'Submit Sponsorship Enquiry'},
-    agenda:{title:'Request Full Agenda',intro:'Share your details to receive the full Meridian Exchange agenda and roundtable focus areas.',intent:'Request Full Agenda',sponsor:false,submit:'Request Agenda'}
+
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwvqitdAXm8_ClWzgL--7cBnBrWAzcHDO5x6bNrjSvWHQ0wODBTQ7ABtzpJhcEZRgZv/exec";
+
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+
+  const configs = {
+    invitation: {
+      title: 'Request Invitation',
+      intro: 'Submit your details for invitation consideration to Meridian Exchange, an invitation-only strategic roundtable summit.',
+      intent: 'Request Invitation',
+      sponsor: false,
+      submit: 'Submit Invitation Request'
+    },
+    partner: {
+      title: 'Partner With Us',
+      intro: 'Share your organisation details and partnership interest. Our team will contact you to discuss strategic alignment.',
+      intent: 'Partner With Us',
+      sponsor: true,
+      submit: 'Submit Partnership Enquiry'
+    },
+    sponsorship: {
+      title: 'Discuss Sponsorship',
+      intro: 'Tell us about your sponsorship objectives and our team will share suitable partnership options.',
+      intent: 'Contact Us to Discuss Sponsorship',
+      sponsor: true,
+      submit: 'Submit Sponsorship Enquiry'
+    },
+    agenda: {
+      title: 'Request Full Agenda',
+      intro: 'Share your details to receive the full Meridian Exchange agenda and roundtable focus areas.',
+      intent: 'Request Full Agenda',
+      sponsor: false,
+      submit: 'Request Agenda'
+    }
   };
+
   function openModal(type){
-    const modal=$('#leadModal'); if(!modal)return;
-    const cfg=configs[type]||configs.invitation;
-    $('#leadModalTitle').textContent=cfg.title;
-    $('#leadModalIntro').textContent=cfg.intro;
-    $('#formIntent').value=cfg.intent;
-    $('.lead-submit').textContent=cfg.submit;
-    modal.classList.toggle('sponsor-mode',!!cfg.sponsor);
+    const modal = $('#leadModal');
+    if (!modal) return;
+
+    const cfg = configs[type] || configs.invitation;
+
+    $('#leadModalTitle').textContent = cfg.title;
+    $('#leadModalIntro').textContent = cfg.intro;
+    $('#formIntent').value = cfg.intent;
+    $('.lead-submit').textContent = cfg.submit;
+
+    modal.classList.toggle('sponsor-mode', !!cfg.sponsor);
     modal.classList.add('active');
-    modal.setAttribute('aria-hidden','false');
+    modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
-    setTimeout(()=>{const first=modal.querySelector('input[name="First Name"]'); if(first)first.focus();},80);
+
+    setTimeout(() => {
+      const first = modal.querySelector('input[name="First Name"]');
+      if (first) first.focus();
+    }, 80);
   }
+
   function closeModal(){
-    const modal=$('#leadModal'); if(!modal)return;
+    const modal = $('#leadModal');
+    if (!modal) return;
+
     modal.classList.remove('active');
-    modal.setAttribute('aria-hidden','true');
+    modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
   }
-  document.addEventListener('DOMContentLoaded',()=>{
-    $$('.js-open-lead-form').forEach(btn=>btn.addEventListener('click',()=>openModal(btn.dataset.formType)));
-    $$('[data-close-lead-modal]').forEach(btn=>btn.addEventListener('click',closeModal));
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
-    const form=$('#leadForm');
-    if(form){
-      form.addEventListener('submit',e=>{
+
+  function getFormPayload(form){
+    const data = new FormData(form);
+
+    return {
+      enquiryType: data.get("Enquiry Type") || "",
+      firstName: data.get("First Name") || "",
+      lastName: data.get("Last Name") || "",
+      businessEmail: data.get("Business Email") || "",
+      mobileNumber: data.get("Mobile Number") || "",
+      jobTitle: data.get("Job Title") || "",
+      company: data.get("Company") || "",
+      country: data.get("Country") || "",
+      organisationType: data.get("Organisation Type") || "",
+      sponsorshipInterest: data.get("Sponsorship Interest") || "",
+      estimatedBudgetRange: data.get("Estimated Budget Range") || "",
+      message: data.get("Message") || "",
+      consent: data.get("Consent") ? "Yes" : "No",
+      pageUrl: window.location.href
+    };
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    $$('.js-open-lead-form').forEach(btn => {
+      btn.addEventListener('click', () => openModal(btn.dataset.formType));
+    });
+
+    $$('[data-close-lead-modal]').forEach(btn => {
+      btn.addEventListener('click', closeModal);
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    const form = $('#leadForm');
+
+    if (form) {
+      form.addEventListener('submit', async e => {
         e.preventDefault();
-        if(!form.reportValidity())return;
-        const data=new FormData(form);
-        const intent=data.get('Enquiry Type')||'Website Enquiry';
-        const lines=[];
-        for(const [key,value] of data.entries()){
-          if(key==='Consent')continue;
-          if(String(value).trim())lines.push(`${key}: ${value}`);
+
+        if (!form.reportValidity()) return;
+
+        const submitButton = form.querySelector('.lead-submit');
+        const originalText = submitButton.textContent;
+
+        submitButton.textContent = 'Submitting...';
+        submitButton.disabled = true;
+
+        const payload = getFormPayload(form);
+
+        try {
+          await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'text/plain;charset=utf-8'
+            },
+            body: JSON.stringify(payload)
+          });
+
+          submitButton.textContent = 'Submitted Successfully';
+
+          setTimeout(() => {
+            form.reset();
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+            closeModal();
+            alert('Thank you. Your enquiry has been received.');
+          }, 700);
+
+        } catch (error) {
+          console.error('Lead form submission error:', error);
+          submitButton.textContent = originalText;
+          submitButton.disabled = false;
+          alert('Something went wrong. Please try again.');
         }
-        lines.push('Consent: Agreed to be contacted by Zenith Nexus regarding Meridian Exchange.');
-        const subject=encodeURIComponent(`Meridian Exchange - ${intent}`);
-        const body=encodeURIComponent(lines.join('\n'));
-        window.location.href=`mailto:mohammed@zenithnexus.com?subject=${subject}&body=${body}`;
-        setTimeout(closeModal,500);
       });
     }
   });
