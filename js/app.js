@@ -208,7 +208,7 @@
             submitButton.textContent = originalText;
             submitButton.disabled = false;
             closeModal();
-            alert('Thank you. Your enquiry has been received.');
+            alert('Thank you for your interest in Meridian Exchange. Your request has been received by the Meridian Exchange Secretariat. A member of our team will contact you shortly..');
           }, 700);
 
         } catch (error) {
