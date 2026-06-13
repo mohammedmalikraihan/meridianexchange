@@ -28,7 +28,19 @@ h1,h2,h3,p{margin-top:0}h1{font-family:'Barlow Condensed',sans-serif;font-size:c
 .brand-mark{display:block;margin:6px auto 24px;color:#8392a7;text-transform:uppercase;letter-spacing:.22em;font-size:clamp(1.1rem,2.3vw,1.8rem)}
 .hero-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:18px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 22px;border-radius:999px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;font-size:.82rem;transition:transform .25s ease,box-shadow .25s ease,background .25s ease}.btn:hover{transform:translateY(-3px)}.btn-primary{background:linear-gradient(90deg,var(--primary),var(--primary-2));color:#fff;box-shadow:0 14px 30px rgba(11,78,162,.22)}.btn-secondary{background:#fff;color:#0b4ea2;border:1px solid #d9e7f6;box-shadow:0 14px 30px rgba(20,48,86,.08)}
 .compact-countdown{margin-top:24px}.compact-countdown .time-block{min-width:96px;padding:14px 12px}.compact-countdown .time-block .number{font-size:2.45rem}
-.section-padding-sm{padding:36px 0}.impact-container{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:20px!important;background:#fff!important}.impact-item{padding:20px 14px;text-align:center;border:1px solid #e3edf7;border-radius:18px;background:linear-gradient(180deg,#fff,#f8fbff)}.impact-number{display:block;font-family:'Barlow Condensed',sans-serif;font-size:3.2rem;line-height:.9;color:#0b4ea2;font-weight:800}.impact-number:after{content:'+'}.impact-item:first-child .impact-number:after,.impact-item:nth-child(4) .impact-number:after{content:''}.impact-item p{margin:8px 0 0;color:#607086;text-transform:uppercase;letter-spacing:.08em;font-size:.76rem;font-weight:800}
+.section-padding-sm{padding:36px 0}.impact-container{
+  display:grid;
+  grid-template-columns:
+      1fr
+      1.2fr
+      2fr
+      2fr
+      1fr;
+  gap:18px;
+  padding:20px!important;
+  background:#fff!important;
+  align-items:stretch;
+}.impact-item{padding:20px 14px;text-align:center;border:1px solid #e3edf7;border-radius:18px;background:linear-gradient(180deg,#fff,#f8fbff)}.impact-number{display:block;font-family:'Barlow Condensed',sans-serif;font-size:3.2rem;line-height:.9;color:#0b4ea2;font-weight:800}.impact-number:after{content:'+'}.impact-item:first-child .impact-number:after,.impact-item:nth-child(4) .impact-number:after{content:''}.impact-item p{margin:8px 0 0;color:#607086;text-transform:uppercase;letter-spacing:.08em;font-size:.76rem;font-weight:800}
 .featured-speaker-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:26px 0 24px}.featured-speaker{display:grid;grid-template-columns:108px 1fr;gap:18px;align-items:center;padding:18px}.featured-speaker img{width:108px;height:108px;object-fit:cover;border-radius:18px;border:1px solid #dbe5f0}.featured-speaker h3{margin-bottom:8px}.section-kicker{margin:12px 0;color:#7b8ba0;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem}.speaker-card:hover{transform:translateY(-8px) scale(1.015)}
 .agenda-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px}.agenda-tab{border:1px solid #dbe5f0;background:#fff;color:#35506d;border-radius:999px;padding:10px 14px;font-weight:800;letter-spacing:.04em;cursor:pointer}.agenda-tab.active{background:linear-gradient(90deg,var(--primary),var(--primary-2));color:#fff;border-color:transparent}.agenda-panel{display:none}.agenda-panel.active{display:block;animation:fadeIn .35s ease both}
 .partner-placeholder{margin-top:24px;padding:24px;border:1px dashed #c9d8ea;border-radius:22px;background:linear-gradient(180deg,#fff,#f8fbff)}.partner-placeholder h3{margin-bottom:6px}.logo-ticker{overflow:hidden;margin-top:18px;padding:12px 0;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}.logo-track{display:flex;gap:14px;width:max-content;animation:speakerMarquee 34s linear infinite}.logo-track span{white-space:nowrap;padding:12px 18px;border:1px solid #dbe5f0;border-radius:999px;background:#fff;color:#607086;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem}.partner-placeholder:hover .logo-track{animation-play-state:paused}
@@ -337,28 +349,5 @@ body.modal-open{overflow:hidden;}
 
   .floating-cta{
     z-index:1200;
-  }
-}
-/* DESKTOP IMPACT SECTION ALIGNMENT FIX */
-
-@media(min-width:901px){
-
-  .impact-strip .container{
-    width:min(1450px, calc(100% - 80px));
-    max-width:1450px;
-  }
-
-  .impact-container{
-    grid-template-columns:0.8fr 0.9fr 1.8fr 1.5fr 1.5fr;
-    gap:16px;
-  }
-
-  .impact-item{
-    min-width:0;
-    overflow:hidden;
-  }
-
-  .impact-word{
-    font-size:clamp(2.5rem, 3vw, 3.6rem);
   }
 }
