@@ -179,3 +179,128 @@ body.modal-open{overflow:hidden;}
     grid-template-columns:1fr;
   }
 }
+/* ==========================================
+   MOBILE FIX + UNIFORM STAT CARDS
+========================================== */
+
+.impact-item,
+.stat-card{
+  min-height:150px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.impact-number,
+.impact-word,
+.stat-val{
+  font-family:'Barlow Condensed', sans-serif;
+  font-size:clamp(3rem, 7vw, 4.2rem);
+  line-height:.9;
+  color:#0b4ea2;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+.impact-item p,
+.stat-card{
+  color:#607086;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:.82rem;
+  font-weight:800;
+}
+
+@media(max-width:768px){
+
+  #cover{
+    min-height:auto;
+    padding-top:120px;
+    padding-bottom:36px;
+  }
+
+  .hero-topic{
+    font-size:clamp(3rem, 13vw, 4.8rem) !important;
+    line-height:.9 !important;
+  }
+
+  .hero-theme-highlight{
+    font-size:clamp(1.5rem, 7vw, 2.2rem) !important;
+    line-height:1.05 !important;
+  }
+
+  .hero-support{
+    font-size:1.08rem;
+    line-height:1.55;
+    max-width:92%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-actions{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    align-items:center;
+    width:100%;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+    max-width:320px;
+  }
+
+  .meta-info{
+    flex-direction:column;
+    gap:12px;
+    align-items:center;
+  }
+
+  .meta-info span{
+    width:100%;
+    max-width:320px;
+    justify-content:center;
+  }
+
+  .countdown-container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    max-width:320px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .bottom-bar{
+    position:static;
+    transform:none;
+    width:100%;
+    margin:26px auto 0;
+    border-radius:22px;
+    line-height:1.8;
+  }
+
+  .impact-container{
+    grid-template-columns:1fr !important;
+    gap:18px;
+  }
+
+  .impact-item,
+  .stat-card{
+    min-height:145px;
+  }
+
+  .floating-cta{
+    width:90%;
+    left:5%;
+    right:5%;
+    bottom:14px;
+    padding:15px 18px;
+  }
+
+  body{
+    padding-bottom:76px;
+  }
+}
