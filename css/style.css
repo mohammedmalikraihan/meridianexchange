@@ -339,3 +339,26 @@ body.modal-open{overflow:hidden;}
     z-index:1200;
   }
 }
+/* DESKTOP IMPACT SECTION ALIGNMENT FIX */
+
+@media(min-width:901px){
+
+  .impact-strip .container{
+    width:min(1450px, calc(100% - 80px));
+    max-width:1450px;
+  }
+
+  .impact-container{
+    grid-template-columns:0.8fr 0.9fr 1.8fr 1.5fr 1.5fr;
+    gap:16px;
+  }
+
+  .impact-item{
+    min-width:0;
+    overflow:hidden;
+  }
+
+  .impact-word{
+    font-size:clamp(2.5rem, 3vw, 3.6rem);
+  }
+}
