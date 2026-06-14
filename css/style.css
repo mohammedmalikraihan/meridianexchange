@@ -351,3 +351,34 @@ body.modal-open{overflow:hidden;}
     z-index:1200;
   }
 }
+/* SPEAKERS PAGE GRID */
+
+.speakers-page-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+  margin-top:32px;
+}
+
+.speakers-page-grid .speaker-card{
+  width:100%;
+  flex:none;
+}
+
+@media(max-width:1100px){
+  .speakers-page-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:760px){
+  .speakers-page-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:520px){
+  .speakers-page-grid{
+    grid-template-columns:1fr;
+  }
+}
