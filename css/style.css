@@ -161,9 +161,7 @@ body.modal-open{overflow:hidden;}
   margin-top:32px;
 }
 
-.insight-card{
-  padding:30px;
-}
+.insight-card{padding:30px;}
 
 .insight-num{
   display:block;
@@ -173,9 +171,7 @@ body.modal-open{overflow:hidden;}
   margin-bottom:16px;
 }
 
-.insight-card h3{
-  margin-bottom:16px;
-}
+.insight-card h3{margin-bottom:16px;}
 
 .insights-cta{
   margin-top:32px;
@@ -186,22 +182,15 @@ body.modal-open{overflow:hidden;}
   box-shadow:var(--shadow-soft);
 }
 
-.insights-cta h3{
-  margin-bottom:10px;
-}
-
-.insights-cta p{
-  margin-bottom:20px;
-  max-width:900px;
-}
+.insights-cta h3{margin-bottom:10px;}
+.insights-cta p{margin-bottom:20px;max-width:900px;}
 
 @media(max-width:900px){
-  .insights-grid{
-    grid-template-columns:1fr;
-  }
+  .insights-grid{grid-template-columns:1fr;}
 }
+
 /* ==========================================
-   MOBILE FIX + UNIFORM STAT CARDS
+   UNIFORM IMPACT / STAT CARDS + MOBILE HERO
 ========================================== */
 
 .impact-item,
@@ -217,8 +206,8 @@ body.modal-open{overflow:hidden;}
 .impact-number,
 .impact-word,
 .stat-val{
-  font-family:'Barlow Condensed', sans-serif;
-  font-size:clamp(3rem, 7vw, 4.2rem);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(3rem,7vw,4.2rem);
   line-height:.9;
   color:#0b4ea2;
   font-weight:800;
@@ -235,7 +224,6 @@ body.modal-open{overflow:hidden;}
 }
 
 @media(max-width:768px){
-
   #cover{
     min-height:auto;
     padding-top:120px;
@@ -243,12 +231,12 @@ body.modal-open{overflow:hidden;}
   }
 
   .hero-topic{
-    font-size:clamp(3rem, 13vw, 4.8rem) !important;
+    font-size:clamp(3rem,13vw,4.8rem) !important;
     line-height:.9 !important;
   }
 
   .hero-theme-highlight{
-    font-size:clamp(1.5rem, 7vw, 2.2rem) !important;
+    font-size:clamp(1.5rem,7vw,2.2rem) !important;
     line-height:1.05 !important;
   }
 
@@ -290,44 +278,8 @@ body.modal-open{overflow:hidden;}
     grid-template-columns:repeat(2,1fr);
     gap:12px;
     max-width:320px;
-    margin-left:auto;
-    margin-right:auto;
+    margin:24px auto 20px;
   }
-
-  .bottom-bar{
-    position:static;
-    transform:none;
-    width:100%;
-    margin:26px auto 0;
-    border-radius:22px;
-    line-height:1.8;
-  }
-
-  .impact-container{
-    grid-template-columns:1fr !important;
-    gap:18px;
-  }
-
-  .impact-item,
-  .stat-card{
-    min-height:145px;
-  }
-
-  .floating-cta{
-    width:90%;
-    left:5%;
-    right:5%;
-    bottom:14px;
-    padding:15px 18px;
-  }
-
-  body{
-    padding-bottom:76px;
-  }
-}
-/* FINAL MOBILE HERO CLEANUP */
-
-@media(max-width:768px){
 
   .bottom-bar{
     position:static !important;
@@ -346,21 +298,31 @@ body.modal-open{overflow:hidden;}
     display:block;
   }
 
-  .animate-subtle{
-    animation:none !important;
-    transform:none !important;
+  .animate-subtle{animation:none !important;transform:none !important;}
+
+  .impact-container{
+    grid-template-columns:1fr !important;
+    gap:18px;
   }
 
-  .countdown-container{
-    margin-top:24px;
-    margin-bottom:20px;
-  }
+  .impact-item,
+  .stat-card{min-height:145px;}
 
   .floating-cta{
     z-index:1200;
+    width:90%;
+    left:5%;
+    right:5%;
+    bottom:14px;
+    padding:15px 18px;
   }
+
+  body{padding-bottom:76px;}
 }
-/* SPEAKERS PAGE GRID FIX */
+
+/* ==========================================
+   SPEAKERS PAGE GRID
+========================================== */
 
 .speakers-page-grid{
   display:grid !important;
@@ -376,34 +338,22 @@ body.modal-open{overflow:hidden;}
   margin:0 !important;
 }
 
-@media(max-width:1100px){
-  .speakers-page-grid{
-    grid-template-columns:repeat(3,1fr) !important;
-  }
-}
+@media(max-width:1100px){.speakers-page-grid{grid-template-columns:repeat(3,1fr) !important;}}
+@media(max-width:760px){.speakers-page-grid{grid-template-columns:repeat(2,1fr) !important;}}
+@media(max-width:520px){.speakers-page-grid{grid-template-columns:1fr !important;}}
 
-@media(max-width:760px){
-  .speakers-page-grid{
-    grid-template-columns:repeat(2,1fr) !important;
-  }
-}
+/* ==========================================
+   IMPACT STRIP
+========================================== */
 
-@media(max-width:520px){
-  .speakers-page-grid{
-    grid-template-columns:1fr !important;
-  }
-}
-/* FINAL IMPACT STRIP FIX */
-
-.impact-strip{
-  overflow:hidden;
-}
+.impact-strip{overflow:hidden;}
 
 .impact-strip .container{
-  width:min(1360px, calc(100% - 40px)) !important;
+  width:min(1360px,calc(100% - 40px)) !important;
   max-width:1360px !important;
   padding:20px !important;
 }
+
 /* ==========================================
    DELEGATE ACCESS & PASS OPTIONS
 ========================================== */
@@ -421,13 +371,8 @@ body.modal-open{overflow:hidden;}
   align-items:center;
 }
 
-.delegate-callout h3{
-  margin-bottom:10px;
-}
-
-.delegate-callout p{
-  margin-bottom:10px;
-}
+.delegate-callout h3{margin-bottom:10px;}
+.delegate-callout p{margin-bottom:10px;}
 
 .delegate-format-grid{
   display:grid;
@@ -492,9 +437,7 @@ body.modal-open{overflow:hidden;}
   background:linear-gradient(90deg,var(--primary-2),var(--accent));
 }
 
-.pass-section{
-  margin-top:38px;
-}
+.pass-section{margin-top:38px;}
 
 .pass-grid{
   display:grid;
@@ -552,47 +495,9 @@ body.modal-open{overflow:hidden;}
   margin-top:8px;
 }
 
-.pass-note{
-  margin-top:18px;
-  font-size:.95rem;
-}
-
-.delegate-cta{
-  text-align:left;
-}
-
-@media(max-width:1000px){
-  .delegate-format-grid,
-  .delegate-callout{
-    grid-template-columns:1fr;
-  }
-
-  .pass-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-}
-
-@media(max-width:620px){
-  .format-flow,
-  .pass-grid{
-    grid-template-columns:1fr;
-  }
-
-  .delegate-callout,
-  .delegate-info-card,
-  .pass-card{
-    padding:22px;
-  }
-
-  .pass-price{
-    font-size:2rem;
-  }
-}
-/* Early confirmation deadline label */
-
-.early-pass{
-  position:relative;
-}
+.pass-note{margin-top:18px;font-size:.95rem;}
+.delegate-cta{text-align:left;}
+.early-pass{position:relative;}
 
 .pass-deadline{
   display:inline-flex;
@@ -608,32 +513,46 @@ body.modal-open{overflow:hidden;}
   text-transform:uppercase;
   letter-spacing:.04em;
 }
+
+@media(max-width:1000px){
+  .delegate-format-grid,
+  .delegate-callout{grid-template-columns:1fr;}
+  .pass-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+
+@media(max-width:620px){
+  .format-flow,
+  .pass-grid{grid-template-columns:1fr;}
+  .delegate-callout,
+  .delegate-info-card,
+  .pass-card{padding:22px;}
+  .pass-price{font-size:2rem;}
+}
+
 /* ==========================================
-   ABOUT SECTION POLICY VALUE CARDS
+   ABOUT SECTION + HOMEPAGE SPACING
 ========================================== */
 
-.about-panel{
-  position:relative;
-}
+.about-panel{position:relative;}
 
 .about-upgrade-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:36px;
+  gap:32px;
   align-items:start;
   margin-top:22px;
 }
 
 .about-copy p{
-  margin-bottom:18px;
-  line-height:1.75;
+  margin-bottom:14px;
+  line-height:1.65;
 }
 
 .about-mini-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:12px;
-  margin-top:26px;
+  margin-top:20px;
 }
 
 .about-mini-grid span{
@@ -652,12 +571,19 @@ body.modal-open{overflow:hidden;}
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:18px;
+  margin-bottom:0;
 }
 
 .about-value-card{
   position:relative;
-  min-height:190px;
   overflow:hidden;
+  min-height:165px;
+  margin-bottom:0;
+  padding:24px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+  box-shadow:var(--shadow-soft);
 }
 
 .about-value-card:before{
@@ -670,116 +596,6 @@ body.modal-open{overflow:hidden;}
 
 .about-value-line{
   display:block;
-  width:54px;
-  height:4px;
-  border-radius:999px;
-  background:linear-gradient(90deg,#0b4ea2,#c9a24a);
-  margin-bottom:18px;
-}
-
-.about-value-card h3{
-  position:relative;
-  margin-bottom:12px;
-  color:#0b2545;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  font-size:1rem;
-}
-
-.about-value-card p{
-  position:relative;
-  line-height:1.65;
-  margin-bottom:0;
-}
-
-@media(max-width:900px){
-  .about-upgrade-grid{
-    grid-template-columns:1fr;
-  }
-
-  .about-value-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-}
-
-@media(max-width:620px){
-  .about-value-grid,
-  .about-mini-grid{
-    grid-template-columns:1fr;
-  }
-
-  .about-value-card{
-    min-height:auto;
-  }
-}
-
-/* ==========================================
-   GLOBAL SECTION SPACING REDUCTION
-   Fixes large gaps between homepage sections
-========================================== */
-
-.page.section-padding{
-  padding-top:72px !important;
-  padding-bottom:72px !important;
-}
-
-.section-padding{
-  padding-top:72px !important;
-  padding-bottom:72px !important;
-}
-
-/* Reduce spacing directly after the top impact/stat strip */
-.impact-strip + .page.section-padding{
-  padding-top:56px !important;
-}
-
-/* Reduce extra empty space before the roundtables section */
-#our-approach{
-  padding-bottom:56px !important;
-}
-
-#roundtables{
-  padding-top:56px !important;
-}
-
-/* ==========================================
-   ABOUT SECTION CARD SPACING FIX
-========================================== */
-
-.about-upgrade-grid{
-  display:grid !important;
-  grid-template-columns:1fr 1fr !important;
-  gap:32px !important;
-  align-items:start !important;
-}
-
-.about-value-grid{
-  display:grid !important;
-  grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
-  gap:18px !important;
-}
-
-.about-value-card{
-  padding:24px !important;
-  min-height:165px !important;
-  border:1px solid var(--line);
-  border-radius:22px;
-  background:#fff;
-  box-shadow:var(--shadow-soft);
-}
-
-.about-value-card h3{
-  font-size:1.05rem !important;
-  margin-bottom:10px !important;
-}
-
-.about-value-card p{
-  margin-bottom:0 !important;
-  line-height:1.55 !important;
-}
-
-.about-value-line{
-  display:block;
   width:52px;
   height:4px;
   border-radius:999px;
@@ -787,19 +603,40 @@ body.modal-open{overflow:hidden;}
   margin-bottom:14px;
 }
 
-/* Tighten spacing inside the About text area */
-.about-copy p{
-  margin-bottom:14px !important;
-  line-height:1.65 !important;
+.about-value-card h3{
+  position:relative;
+  margin-bottom:10px;
+  color:#0b2545;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  font-size:1.05rem;
 }
 
-.about-mini-grid{
-  margin-top:20px !important;
+.about-value-card p{
+  position:relative;
+  line-height:1.55;
+  margin-bottom:0;
 }
 
-/* ==========================================
-   MOBILE SPACING FIX
-========================================== */
+.page.section-padding,
+.section-padding{
+  padding-top:72px !important;
+  padding-bottom:72px !important;
+}
+
+.impact-strip + .page.section-padding{padding-top:56px !important;}
+
+#our-approach.page.section-padding{
+  padding-bottom:0 !important;
+  margin-bottom:0 !important;
+}
+
+#our-approach .container{margin-bottom:0 !important;}
+
+#roundtables.page.section-padding{
+  padding-top:24px !important;
+  margin-top:-55px !important;
+}
 
 @media(max-width:900px){
   .page.section-padding,
@@ -809,20 +646,17 @@ body.modal-open{overflow:hidden;}
   }
 
   .about-upgrade-grid{
-    grid-template-columns:1fr !important;
-    gap:24px !important;
+    grid-template-columns:1fr;
+    gap:24px;
   }
 
-  .about-value-grid{
-    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
-  }
+  .about-value-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
 
-  #our-approach{
-    padding-bottom:44px !important;
-  }
+  #our-approach.page.section-padding{padding-bottom:0 !important;}
 
-  #roundtables{
-    padding-top:44px !important;
+  #roundtables.page.section-padding{
+    padding-top:20px !important;
+    margin-top:-75px !important;
   }
 }
 
@@ -833,65 +667,17 @@ body.modal-open{overflow:hidden;}
     padding-bottom:44px !important;
   }
 
-  .container:not(#cover .container){
-    padding:24px !important;
-  }
+  .container:not(#cover .container){padding:24px !important;}
 
   .about-value-grid,
-  .about-mini-grid{
-    grid-template-columns:1fr !important;
-  }
+  .about-mini-grid{grid-template-columns:1fr;}
 
   .about-value-card{
-    min-height:auto !important;
-    padding:22px !important;
-  }
-}
-/* ==========================================
-   FINAL FIX: ABOUT TO ROUNDTABLES SPACING
-   Reduces large blank space on desktop and mobile
-========================================== */
-
-#our-approach.page.section-padding{
-  padding-bottom:0 !important;
-  margin-bottom:0 !important;
-}
-
-#our-approach .container{
-  margin-bottom:0 !important;
-}
-
-#roundtables.page.section-padding{
-  padding-top:24px !important;
-  margin-top:-55px !important;
-}
-
-/* Keep the About cards compact */
-.about-value-grid{
-  margin-bottom:0 !important;
-}
-
-.about-value-card{
-  margin-bottom:0 !important;
-}
-
-/* Tablet spacing */
-@media(max-width:900px){
-  #our-approach.page.section-padding{
-    padding-bottom:0 !important;
+    min-height:auto;
+    padding:22px;
   }
 
-  #roundtables.page.section-padding{
-    padding-top:20px !important;
-    margin-top:-75px !important;
-  }
-}
-
-/* Mobile spacing */
-@media(max-width:620px){
-  #our-approach.page.section-padding{
-    padding-bottom:0 !important;
-  }
+  #our-approach.page.section-padding{padding-bottom:0 !important;}
 
   #roundtables.page.section-padding{
     padding-top:18px !important;
