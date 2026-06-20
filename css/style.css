@@ -847,3 +847,54 @@ body.modal-open{overflow:hidden;}
     padding:22px !important;
   }
 }
+/* ==========================================
+   FINAL FIX: ABOUT TO ROUNDTABLES SPACING
+   Reduces large blank space on desktop and mobile
+========================================== */
+
+#our-approach.page.section-padding{
+  padding-bottom:0 !important;
+  margin-bottom:0 !important;
+}
+
+#our-approach .container{
+  margin-bottom:0 !important;
+}
+
+#roundtables.page.section-padding{
+  padding-top:24px !important;
+  margin-top:-55px !important;
+}
+
+/* Keep the About cards compact */
+.about-value-grid{
+  margin-bottom:0 !important;
+}
+
+.about-value-card{
+  margin-bottom:0 !important;
+}
+
+/* Tablet spacing */
+@media(max-width:900px){
+  #our-approach.page.section-padding{
+    padding-bottom:0 !important;
+  }
+
+  #roundtables.page.section-padding{
+    padding-top:20px !important;
+    margin-top:-75px !important;
+  }
+}
+
+/* Mobile spacing */
+@media(max-width:620px){
+  #our-approach.page.section-padding{
+    padding-bottom:0 !important;
+  }
+
+  #roundtables.page.section-padding{
+    padding-top:18px !important;
+    margin-top:-120px !important;
+  }
+}
