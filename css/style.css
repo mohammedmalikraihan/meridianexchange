@@ -608,3 +608,107 @@ body.modal-open{overflow:hidden;}
   text-transform:uppercase;
   letter-spacing:.04em;
 }
+/* ==========================================
+   ABOUT SECTION POLICY VALUE CARDS
+========================================== */
+
+.about-panel{
+  position:relative;
+}
+
+.about-upgrade-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:36px;
+  align-items:start;
+  margin-top:22px;
+}
+
+.about-copy p{
+  margin-bottom:18px;
+  line-height:1.75;
+}
+
+.about-mini-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin-top:26px;
+}
+
+.about-mini-grid span{
+  padding:14px 16px;
+  border:1px solid #dbe5f0;
+  border-radius:14px;
+  background:linear-gradient(180deg,#ffffff,#f7fbff);
+  color:#17395e;
+  font-size:.76rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.about-value-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+
+.about-value-card{
+  position:relative;
+  min-height:190px;
+  overflow:hidden;
+}
+
+.about-value-card:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top right,rgba(15,123,220,.10),transparent 55%);
+  pointer-events:none;
+}
+
+.about-value-line{
+  display:block;
+  width:54px;
+  height:4px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#0b4ea2,#c9a24a);
+  margin-bottom:18px;
+}
+
+.about-value-card h3{
+  position:relative;
+  margin-bottom:12px;
+  color:#0b2545;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  font-size:1rem;
+}
+
+.about-value-card p{
+  position:relative;
+  line-height:1.65;
+  margin-bottom:0;
+}
+
+@media(max-width:900px){
+  .about-upgrade-grid{
+    grid-template-columns:1fr;
+  }
+
+  .about-value-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:620px){
+  .about-value-grid,
+  .about-mini-grid{
+    grid-template-columns:1fr;
+  }
+
+  .about-value-card{
+    min-height:auto;
+  }
+}
