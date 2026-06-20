@@ -588,3 +588,23 @@ body.modal-open{overflow:hidden;}
     font-size:2rem;
   }
 }
+/* Early confirmation deadline label */
+
+.early-pass{
+  position:relative;
+}
+
+.pass-deadline{
+  display:inline-flex;
+  align-items:center;
+  margin:10px 0 4px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:#fff1cf;
+  color:#8a6517;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.76rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
