@@ -712,3 +712,138 @@ body.modal-open{overflow:hidden;}
     min-height:auto;
   }
 }
+
+/* ==========================================
+   GLOBAL SECTION SPACING REDUCTION
+   Fixes large gaps between homepage sections
+========================================== */
+
+.page.section-padding{
+  padding-top:72px !important;
+  padding-bottom:72px !important;
+}
+
+.section-padding{
+  padding-top:72px !important;
+  padding-bottom:72px !important;
+}
+
+/* Reduce spacing directly after the top impact/stat strip */
+.impact-strip + .page.section-padding{
+  padding-top:56px !important;
+}
+
+/* Reduce extra empty space before the roundtables section */
+#our-approach{
+  padding-bottom:56px !important;
+}
+
+#roundtables{
+  padding-top:56px !important;
+}
+
+/* ==========================================
+   ABOUT SECTION CARD SPACING FIX
+========================================== */
+
+.about-upgrade-grid{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  gap:32px !important;
+  align-items:start !important;
+}
+
+.about-value-grid{
+  display:grid !important;
+  grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+  gap:18px !important;
+}
+
+.about-value-card{
+  padding:24px !important;
+  min-height:165px !important;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+  box-shadow:var(--shadow-soft);
+}
+
+.about-value-card h3{
+  font-size:1.05rem !important;
+  margin-bottom:10px !important;
+}
+
+.about-value-card p{
+  margin-bottom:0 !important;
+  line-height:1.55 !important;
+}
+
+.about-value-line{
+  display:block;
+  width:52px;
+  height:4px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#0b4ea2,#c9a24a);
+  margin-bottom:14px;
+}
+
+/* Tighten spacing inside the About text area */
+.about-copy p{
+  margin-bottom:14px !important;
+  line-height:1.65 !important;
+}
+
+.about-mini-grid{
+  margin-top:20px !important;
+}
+
+/* ==========================================
+   MOBILE SPACING FIX
+========================================== */
+
+@media(max-width:900px){
+  .page.section-padding,
+  .section-padding{
+    padding-top:56px !important;
+    padding-bottom:56px !important;
+  }
+
+  .about-upgrade-grid{
+    grid-template-columns:1fr !important;
+    gap:24px !important;
+  }
+
+  .about-value-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  #our-approach{
+    padding-bottom:44px !important;
+  }
+
+  #roundtables{
+    padding-top:44px !important;
+  }
+}
+
+@media(max-width:620px){
+  .page.section-padding,
+  .section-padding{
+    padding-top:44px !important;
+    padding-bottom:44px !important;
+  }
+
+  .container:not(#cover .container){
+    padding:24px !important;
+  }
+
+  .about-value-grid,
+  .about-mini-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .about-value-card{
+    min-height:auto !important;
+    padding:22px !important;
+  }
+}
