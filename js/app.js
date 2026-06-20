@@ -79,13 +79,20 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 
-  const configs = {
+   const configs = {
     invitation: {
       title: 'Request Invitation',
       intro: 'Submit your details for invitation consideration to Meridian Exchange, an invitation-only strategic roundtable summit.',
       intent: 'Request Invitation',
       sponsor: false,
       submit: 'Submit Invitation Request'
+    },
+    delegate: {
+      title: 'Request Delegate Access',
+      intro: 'Submit your details and our team will review your profile for delegate access to Meridian Exchange 2026.',
+      intent: 'Request Delegate Access',
+      sponsor: false,
+      submit: 'Submit Delegate Interest'
     },
     partner: {
       title: 'Partner With Us',
