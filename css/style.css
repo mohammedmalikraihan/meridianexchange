@@ -684,3 +684,28 @@ body.modal-open{overflow:hidden;}
     margin-top:-120px !important;
   }
 }
+/* ==========================================
+   MOBILE ONLY FIX: ABOUT / ROUNDTABLE OVERLAP
+   Keeps desktop spacing unchanged
+========================================== */
+
+@media(max-width:620px){
+  #our-approach.page.section-padding{
+    padding-bottom:36px !important;
+    margin-bottom:0 !important;
+  }
+
+  #roundtables.page.section-padding{
+    margin-top:0 !important;
+    padding-top:36px !important;
+  }
+
+  #roundtables .container{
+    margin-top:0 !important;
+  }
+
+  #roundtables h2{
+    font-size:clamp(2.8rem, 13vw, 4.2rem) !important;
+    line-height:.95 !important;
+  }
+}
