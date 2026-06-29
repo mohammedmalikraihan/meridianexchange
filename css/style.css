@@ -967,3 +967,30 @@ body.modal-open{overflow:hidden;}
     bottom:18px !important;
   }
 }
+/* ==========================================
+   MOBILE WHATSAPP POSITION FIX
+   Keep WhatsApp above the mobile Request Invitation button
+========================================== */
+
+@media(max-width:620px){
+  .whatsapp-float{
+    left:18px !important;
+    right:auto !important;
+    bottom:92px !important;
+    width:50px !important;
+    height:50px !important;
+    padding:11px !important;
+    border-radius:50% !important;
+    z-index:9998 !important;
+  }
+
+  .whatsapp-icon,
+  .whatsapp-icon svg{
+    width:26px !important;
+    height:26px !important;
+  }
+
+  .whatsapp-text{
+    display:none !important;
+  }
+}
