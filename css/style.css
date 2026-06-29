@@ -1071,3 +1071,96 @@ html{
     padding-top:44px !important;
   }
 }
+/* ==========================================
+   MOBILE DATA EMBASSY TABLE FIX
+   Convert wide table into compact mobile cards
+========================================== */
+
+@media(max-width:620px){
+
+  #enclave-model .responsive-table{
+    overflow:visible !important;
+    border-radius:22px !important;
+    border:none !important;
+    box-shadow:none !important;
+    background:transparent !important;
+  }
+
+  #enclave-model .table-model,
+  #enclave-model .table-model thead,
+  #enclave-model .table-model tbody,
+  #enclave-model .table-model tr,
+  #enclave-model .table-model th,
+  #enclave-model .table-model td{
+    display:block !important;
+    width:100% !important;
+  }
+
+  #enclave-model .table-model{
+    border-collapse:separate !important;
+    border-spacing:0 !important;
+    background:transparent !important;
+  }
+
+  #enclave-model .table-model thead{
+    display:none !important;
+  }
+
+  #enclave-model .table-model tr{
+    margin-bottom:16px !important;
+    border:1px solid #dbe5f0 !important;
+    border-radius:20px !important;
+    background:#ffffff !important;
+    box-shadow:0 14px 34px rgba(11,37,69,.08) !important;
+    overflow:hidden !important;
+  }
+
+  #enclave-model .table-model td{
+    min-height:auto !important;
+    height:auto !important;
+    padding:14px 16px !important;
+    border:0 !important;
+    border-bottom:1px solid #e6eef7 !important;
+    font-size:.92rem !important;
+    line-height:1.45 !important;
+    text-align:left !important;
+    white-space:normal !important;
+  }
+
+  #enclave-model .table-model td:last-child{
+    border-bottom:0 !important;
+  }
+
+  #enclave-model .table-model td:nth-child(1)::before{
+    content:"Critical Sector";
+  }
+
+  #enclave-model .table-model td:nth-child(2)::before{
+    content:"Legacy Model";
+  }
+
+  #enclave-model .table-model td:nth-child(3)::before{
+    content:"Digital Infrastructure Blueprint";
+  }
+
+  #enclave-model .table-model td::before{
+    display:block !important;
+    margin-bottom:6px !important;
+    color:#0b4ea2 !important;
+    font-family:'JetBrains Mono', monospace !important;
+    font-size:.68rem !important;
+    font-weight:800 !important;
+    text-transform:uppercase !important;
+    letter-spacing:.08em !important;
+  }
+
+  #enclave-model .table-model td strong{
+    display:block !important;
+    font-size:1rem !important;
+    line-height:1.35 !important;
+  }
+
+  #enclave-model .flow-container{
+    margin-top:22px !important;
+  }
+}
