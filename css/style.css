@@ -875,3 +875,75 @@ body.modal-open{overflow:hidden;}
     flex-basis:164px !important;
   }
 }
+/* ==========================================
+   FLOATING WHATSAPP BUTTON
+========================================== */
+
+.whatsapp-float{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:9999;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:13px 18px;
+  border-radius:999px;
+  background:#25D366;
+  color:#ffffff;
+  font-size:.9rem;
+  font-weight:800;
+  text-decoration:none;
+  letter-spacing:.01em;
+  box-shadow:0 18px 42px rgba(0,0,0,.24);
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.whatsapp-float:hover{
+  transform:translateY(-3px);
+  background:#1ebe5d;
+  box-shadow:0 22px 52px rgba(0,0,0,.3);
+  color:#ffffff;
+}
+
+.whatsapp-icon{
+  width:24px;
+  height:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+.whatsapp-icon svg{
+  width:24px;
+  height:24px;
+  display:block;
+  fill:currentColor;
+}
+
+.whatsapp-text{
+  white-space:nowrap;
+}
+
+@media(max-width:620px){
+  .whatsapp-float{
+    right:16px;
+    bottom:16px;
+    padding:12px;
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    justify-content:center;
+  }
+
+  .whatsapp-text{
+    display:none;
+  }
+
+  .whatsapp-icon,
+  .whatsapp-icon svg{
+    width:27px;
+    height:27px;
+  }
+}
