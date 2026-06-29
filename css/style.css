@@ -947,3 +947,23 @@ body.modal-open{overflow:hidden;}
     height:27px;
   }
 }
+
+/* ==========================================
+   WHATSAPP BUTTON POSITION FIX
+   Move WhatsApp to bottom-left so it does not hide Request Invitation
+========================================== */
+
+.whatsapp-float{
+  left:22px !important;
+  right:auto !important;
+  bottom:22px !important;
+  z-index:9997 !important;
+}
+
+@media(max-width:620px){
+  .whatsapp-float{
+    left:16px !important;
+    right:auto !important;
+    bottom:18px !important;
+  }
+}
