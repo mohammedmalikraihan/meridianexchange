@@ -1028,3 +1028,46 @@ html{
     padding-top:80px !important;
   }
 }
+/* ==========================================
+   SPEAKERS SECTION NEW POSITION
+   Speakers now appear after About Meridian Exchange
+========================================== */
+
+@media(min-width:901px){
+  #our-approach.page.section-padding{
+    padding-bottom:60px !important;
+  }
+
+  #speakers.page.section-padding{
+    margin-top:0 !important;
+    padding-top:70px !important;
+    padding-bottom:80px !important;
+  }
+
+  #roundtables.page.section-padding{
+    padding-top:80px !important;
+  }
+}
+
+@media(max-width:900px){
+  #speakers.page.section-padding{
+    margin-top:0 !important;
+    padding-top:44px !important;
+    padding-bottom:54px !important;
+  }
+
+  #roundtables.page.section-padding{
+    padding-top:54px !important;
+  }
+}
+
+@media(max-width:620px){
+  #speakers.page.section-padding{
+    padding-top:36px !important;
+    padding-bottom:44px !important;
+  }
+
+  #roundtables.page.section-padding{
+    padding-top:44px !important;
+  }
+}
