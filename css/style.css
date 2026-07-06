@@ -1164,3 +1164,143 @@ html{
     margin-top:22px !important;
   }
 }
+/* =========================================================
+   PREMIUM SPEAKER IMAGE FRAME UPDATE
+   Applies automatically to all current and future speaker cards
+   ========================================================= */
+
+:root {
+  --speaker-frame-navy: #061b3d;
+  --speaker-frame-blue: #12366f;
+  --speaker-frame-gold: #c9a24d;
+  --speaker-frame-soft-gold: #f4dfaa;
+  --speaker-frame-light: #f8fbff;
+}
+
+/* Speaker card refinement */
+.speaker-card {
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 45px rgba(6, 27, 61, 0.12);
+  border: 1px solid rgba(201, 162, 77, 0.18);
+}
+
+/* Premium image area */
+.speaker-img-container {
+  position: relative;
+  height: 285px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 50% 92%, rgba(244, 223, 170, 0.95) 0%, rgba(244, 223, 170, 0.35) 28%, transparent 56%),
+    linear-gradient(145deg, var(--speaker-frame-navy) 0%, var(--speaker-frame-blue) 58%, #f3d894 100%);
+  isolation: isolate;
+}
+
+/* Circular premium frame behind speaker */
+.speaker-img-container::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 78%;
+  aspect-ratio: 1 / 1;
+  left: 50%;
+  bottom: -18%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(33, 82, 150, 0.88) 0%, rgba(8, 32, 76, 0.98) 62%, rgba(3, 14, 38, 1) 100%);
+  border: 3px solid rgba(201, 162, 77, 0.95);
+  box-shadow:
+    inset 0 0 45px rgba(255, 255, 255, 0.08),
+    0 0 0 8px rgba(255, 255, 255, 0.52),
+    0 18px 45px rgba(6, 27, 61, 0.18);
+}
+
+/* Soft luxury highlight */
+.speaker-img-container::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    radial-gradient(circle at 28% 18%, rgba(255, 255, 255, 0.16), transparent 34%),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04), transparent 42%, rgba(255, 255, 255, 0.12));
+  pointer-events: none;
+}
+
+/* Speaker photo treatment */
+.speaker-img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  filter: brightness(1.04) contrast(1.04) saturate(0.96);
+  transform: scale(1.02);
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+/* Better hover effect */
+.speaker-card:hover .speaker-img {
+  transform: scale(1.06);
+  filter: brightness(1.08) contrast(1.06) saturate(1);
+}
+
+/* Keep LinkedIn hover overlay clean */
+.speaker-overlay {
+  z-index: 5;
+  background: rgba(6, 27, 61, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+/* Speaker info area */
+.speaker-info {
+  position: relative;
+  z-index: 3;
+  background: linear-gradient(180deg, #ffffff 0%, var(--speaker-frame-light) 100%);
+  padding-top: 24px;
+}
+
+/* Small gold divider below speaker name */
+.speaker-info h3::after {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 2px;
+  margin: 14px auto 0;
+  background: linear-gradient(90deg, transparent, var(--speaker-frame-gold), transparent);
+}
+
+/* Improve title spacing */
+.speaker-title {
+  margin-top: 18px;
+}
+
+/* Mobile refinement */
+@media (max-width: 768px) {
+  .speaker-img-container {
+    height: 255px;
+  }
+
+  .speaker-img-container::before {
+    width: 82%;
+    bottom: -16%;
+  }
+}
+
+@media (max-width: 480px) {
+  .speaker-img-container {
+    height: 235px;
+  }
+
+  .speaker-img-container::before {
+    width: 86%;
+    bottom: -14%;
+  }
+}
