@@ -227,7 +227,7 @@ body.modal-open{overflow:hidden;}
   #cover{
     min-height:auto;
     padding-top:120px;
-    padding-bottom:10px;
+    padding-bottom:48px;
   }
 
   .hero-topic{
@@ -281,18 +281,19 @@ body.modal-open{overflow:hidden;}
     margin:24px auto 20px;
   }
   .quote-style{
-    margin-top:28px;
+    margin-top:34px;
     margin-bottom:0;
+    padding-bottom:28px;
   }
 
   .section-padding-sm{
-    padding-top:12px !important;
-    padding-bottom:24px !important;
+    padding-top:28px !important;
+    padding-bottom:28px !important;
   }
 
   .impact-strip .container{
-    padding-top:12px !important;
-    padding-bottom:12px !important;
+    padding-top:20px !important;
+    padding-bottom:20px !important;
   }
 
   .bottom-bar{
