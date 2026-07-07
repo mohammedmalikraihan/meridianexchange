@@ -321,7 +321,7 @@ body.modal-open{overflow:hidden;}
   }
 
   .impact-item,
-  .stat-card{min-height:145px;}
+  .stat-card{min-height:132px;}
 
   .floating-cta{
     z-index:1200;
