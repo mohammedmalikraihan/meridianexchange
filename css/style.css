@@ -1682,8 +1682,8 @@ html{
   .hero-backdrop-dubai{
     inset:0;
     height:auto;
-    opacity:.18;
-    background-size:auto 48%;
+    opacity:.28;
+    background-size:auto 68%;
     background-position:center bottom;
     background-repeat:no-repeat;
   }
@@ -1700,7 +1700,6 @@ html{
   .hero-node{
     display:none;
   }
-
   .connectivity-map{
     min-height:480px;
   }
