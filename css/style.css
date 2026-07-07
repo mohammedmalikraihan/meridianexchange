@@ -227,7 +227,7 @@ body.modal-open{overflow:hidden;}
   #cover{
     min-height:auto;
     padding-top:120px;
-    padding-bottom:36px;
+    padding-bottom:10px;
   }
 
   .hero-topic{
@@ -279,6 +279,20 @@ body.modal-open{overflow:hidden;}
     gap:12px;
     max-width:320px;
     margin:24px auto 20px;
+  }
+  .quote-style{
+    margin-top:28px;
+    margin-bottom:0;
+  }
+
+  .section-padding-sm{
+    padding-top:12px !important;
+    padding-bottom:24px !important;
+  }
+
+  .impact-strip .container{
+    padding-top:12px !important;
+    padding-bottom:12px !important;
   }
 
   .bottom-bar{
