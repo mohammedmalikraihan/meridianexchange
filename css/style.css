@@ -2114,3 +2114,28 @@ html{
     padding:22px;
   }
 }
+/* ==========================================
+   DATA EMBASSY GENERIC NODE LABEL FIX
+========================================== */
+
+.map-city{
+  line-height:.95;
+}
+
+.map-center small{
+  max-width:96px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+@media(max-width:760px){
+  #enclave-model .map-city{
+    font-size:1.32rem;
+    line-height:.95;
+  }
+
+  #enclave-model .map-center small{
+    font-size:.56rem;
+    max-width:86px;
+  }
+}
