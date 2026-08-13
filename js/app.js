@@ -37,7 +37,7 @@
       move(); addEventListener('scroll',move,{passive:true});
     });
     safe(()=>{
-      const target=new Date('2026-09-08T09:00:00+04:00').getTime(); const ids=['days','hours','minutes','seconds'];
+      const target=new Date('2026-11-10T09:00:00+04:00').getTime(); const ids=['days','hours','minutes','seconds'];
       if(!ids.every(id=>$('#'+id)))return;
       const tick=()=>{let diff=target-Date.now(); if(diff<0)diff=0; const d=Math.floor(diff/86400000), h=Math.floor(diff%86400000/3600000), m=Math.floor(diff%3600000/60000), s=Math.floor(diff%60000/1000); const vals=[d,h,m,s]; ids.forEach((id,i)=>$('#'+id).textContent=String(vals[i]).padStart(2,'0'))};
       tick(); setInterval(tick,1000);
@@ -82,7 +82,7 @@
    const configs = {
     invitation: {
       title: 'Request Invitation',
-      intro: 'Submit your details for invitation consideration to Meridian Exchange, an invitation-only strategic roundtable summit.',
+      intro: 'Submit your details for invitation consideration to Meridian Exchange, an invitation-only strategic summit and workshop programme.',
       intent: 'Request Invitation',
       sponsor: false,
       submit: 'Submit Invitation Request'
@@ -110,7 +110,7 @@
     },
     agenda: {
       title: 'Request Full Agenda',
-      intro: 'Share your details to receive the full Meridian Exchange agenda and roundtable focus areas.',
+      intro: 'Share your details to receive the full Meridian Exchange summit agenda, workshop programme and roundtable focus areas.',
       intent: 'Request Full Agenda',
       sponsor: false,
       submit: 'Request Agenda'
@@ -215,7 +215,7 @@
             submitButton.textContent = originalText;
             submitButton.disabled = false;
             closeModal();
-            alert('Thank you for your interest in Meridian Exchange. Your request has been received by the Meridian Exchange Secretariat. A member of our team will contact you shortly..');
+            alert('Thank you for your interest in Meridian Exchange. Your request has been received by the Meridian Exchange Secretariat. A member of our team will contact you shortly.');
           }, 700);
 
         } catch (error) {
